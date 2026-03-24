@@ -1,16 +1,16 @@
 package main
 import (
-	'log'
-	'time'
+	"log"
+	"time"
 
-	'rent-bot/internal/config'
-	'rent-bot/internal/engine'
+	"rent-bot/internal/config"
+	"rent-bot/internal/engine"
 )
 
 func main() {
 	log.Println("Starting rent bot...")
 
-	cfg, err := config.LoadConfig('config/config.yaml')
+	cfg, err := config.LoadConfig("config/config.yaml")
 	if err != nil {
 		log.Fatalf("Failed to load config: %v", err)
 	}
