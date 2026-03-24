@@ -21,16 +21,18 @@ func main() {
 
 	log.Println("Starting loop...")
 
-	for {
-		start := time.Now()
+for {
+    start := time.Now()
 
-		err := eng.Run()
-		if err != nil {
-			log.Printf("Error running engine: %v", err)
-		}
+    log.Println("Running engine...")
 
-		log.Printf("Cycle completed in %v", time.Since(start))
+    err := eng.Run()
+    if err != nil {
+        log.Println("error:", err)
+    }
 
-		time.Sleep(time.Duration(cfg.PollInterval) * time.Second)
-	}
+    log.Printf("Cycle completed in %s", time.Since(start))
+
+    time.Sleep(time.Duration(cfg.IntervalSeconds) * time.Second)
+}
 }
